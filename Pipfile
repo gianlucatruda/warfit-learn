@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 tqdm = "==4.31.1"
-mlxtend = "==0.15.0.0"
 numpy = "==1.14.5"
 scipy = "==1.1.0"
 matplotlib = "==2.2.2"
@@ -14,6 +13,9 @@ scikit-learn = "==0.20.3"
 tabulate = "*"
 
 [dev-packages]
+setuptools = "*"
+wheel = "*"
+twine = "*"
 
 [requires]
 python_version = "3.6"
