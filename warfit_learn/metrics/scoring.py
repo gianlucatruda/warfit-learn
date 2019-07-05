@@ -1,5 +1,5 @@
 """
-A warfarin dose estimation toolkit.
+A toolkit for reproducible research in warfarin dose estimation.
 Copyright (C) 2019 Gianluca Truda
 
 This program is free software: you can redistribute it and/or modify
