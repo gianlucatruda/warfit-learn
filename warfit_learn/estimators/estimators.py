@@ -18,9 +18,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from sklearn.base import BaseEstimator
 
+
 class Estimator(BaseEstimator):
     """Wrapper class for any sklearn Estimator.
     """
+
     def __init__(self, estimator: BaseEstimator, identifier: str):
         if not isinstance(identifier, str):
             identifier = str(identifier)

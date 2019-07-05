@@ -17,7 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import pandas as pd
-from os.path import dirname, exists, expanduser, isdir, join, splitext
+from os.path import dirname, join, splitext
 
 
 def load_iwpc():
