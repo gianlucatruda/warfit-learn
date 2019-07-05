@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tqdm = "==4.31.1"
+mlxtend = "==0.15.0.0"
+numpy = "==1.14.5"
+scipy = "==1.1.0"
+matplotlib = "==2.2.2"
+pandas = "==0.24.1"
+scikit-learn = "==0.20.3"
+tabulate = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
