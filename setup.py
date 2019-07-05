@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="warfit-learn-gianlucatruda",
-    version="0.0.1",
+    version="0.0.4",
     author="Gianluca Truda",
     author_email="gianlucatruda@gmail.com",
     description="A toolkit for reproducible research in warfarin dose estimation",
@@ -20,4 +20,14 @@ setuptools.setup(
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         "Operating System :: OS Independent",
     ],
+    include_package_data=True,
+    install_requires=[
+        'numpy>=1.14.5',
+        'pandas>=0.24.1',
+        'scikit_learn>=0.21.2',
+        'scipy>=1.1.0',
+        'joblib>=0.12.4',
+        'tqdm>=4.0',
+        'tabulate>=0.8.3',
+    ]
 )

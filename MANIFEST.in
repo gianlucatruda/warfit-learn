@@ -1,0 +1,3 @@
+recursive-include warfit_learn/datasets *.csv *.csv.gz *.pkl
+include LICENSE
+include README*
