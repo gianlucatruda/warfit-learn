@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="warfit-learn-gianlucatruda",
-    version="0.0.4",
+    name="warfit-learn",
+    version="0.1",
     author="Gianluca Truda",
     author_email="gianlucatruda@gmail.com",
     description="A toolkit for reproducible research in warfarin dose estimation",

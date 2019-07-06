@@ -14,7 +14,7 @@ A toolkit for reproducible research in warfarin dose estimation.
 - Multithreaded model evaluation using standardised resampling techniques.
   - Monte-carlo cross validation
   - Bootstrap resampling
-- Full interoperability with the NumPy, SciPy, Pandas, Scikit-learn, and MLxtend.
+- Full interoperability with NumPy, SciPy, Pandas, Scikit-learn, and MLxtend.
 
 Supports Python 3.6+ on macOS, Linux, and Windows.
 
@@ -25,7 +25,7 @@ pip install warfit-learn
 
 ## Usage
 
-For a detailed tutorial, see the [Getting Started](docs/warfit_learn_tutorial.ipynb) document.
+For a detailed tutorial, see the [Getting Started](https://github.com/gianlucatruda/warfit-learn/blob/master/docs/warfit_learn_tutorial.ipynb) document.
 
 **Seamless loading and preprocessing of IWPC dataset**
 
