@@ -40,7 +40,44 @@ def evaluate_estimator(estimator: Estimator,
                        test_size=0.2,
                        squaring=False,
                        parallelism=0.5):
-    """ Resampling evaluator for estimators using PW20, MAE, R^2.
+    """Evaluation function for a single estimator.
+
+    NOTE: You would typically not call this function directly, unless
+    you are evaluating only a single type of estimator.
+
+    Parameters
+    ----------
+    estimator : Estimator
+        The Estimator object to train-evaluate.
+    data : pd.DataFrame
+        The data on which to train and evaluate.
+    technique : str, optional
+        The CV method to use. Either 'mccv' for monte-carlo CV or
+        'bootstrap' for bootstrap resampling, by default 'mccv'.
+    target_column : str, optional
+        The name of the target column in the provided data,
+        by default 'Therapeutic Dose of Warfarin'
+    resamples : int, optional
+        The number of times to resample and evaluate, by default 100.
+        The more resamples performed, the more reliable the aggregated
+        results.
+    test_size : float, optional
+        The fraction of the data to be used as the test/evaluation set,
+        by default 0.2
+    squaring : bool, optional
+        Whether the predictions and truth values must be squared before
+        comparson, by default False. Only enable this if you
+        square-rooted your target variable to un-skew the distribution.
+    parallelism : float, optional
+        The fraction of your processors to parallelise the evaluation
+        over, by default 0.5. Setting this to 1.0 will probably give you
+        the fastest evaluation, but will demand all your CPU resources.
+
+    Returns
+    -------
+    Dictionary
+        A dictionary of lists, with results from each trial. Keys of the
+        dictionary are ['PW20', 'MAE', 'R2'].
     """
 
     assert(technique in ['mccv', 'bootstrap'])
@@ -81,6 +118,45 @@ def evaluate_estimators(estimators: List[Estimator],
                         parallelism=0.5,
                         *args,
                         **kwargs):
+    """Evaluation function for a list of Estimators.
+
+    Parameters
+    ----------
+    estimators : List[Estimator]
+        A list of Estimator objects.
+    data : pd.DataFrame
+        The data on which to train and evaluate.
+    target_column : str, optional
+        The name of the target column in the provided data,
+        by default 'Therapeutic Dose of Warfarin'
+    scale : bool, optional
+        Whether or not to scale the input features prior to training,
+        by default True.
+    parallelism : float, optional
+        The fraction of your processors to parallelise the evaluation
+        over, by default 0.5. Setting this to 1.0 will probably give you
+        the fastest evaluation, but will demand all your CPU resources.
+    technique : str, optional
+        The CV method to use. Either 'mccv' for monte-carlo CV or
+        'bootstrap' for bootstrap resampling, by default 'mccv'.
+    resamples : int, optional
+        The number of times to resample and evaluate, by default 100.
+        The more resamples performed, the more reliable the aggregated
+        results.
+    test_size : float, optional
+        The fraction of the data to be used as the test/evaluation set,
+        by default 0.2
+    squaring : bool, optional
+        Whether the predictions and truth values must be squared before
+        comparson, by default False. Only enable this if you
+        square-rooted your target variable to un-skew the distribution.
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe of results with the name of the Estimator, and the
+        results in terms of MAE, PW20, and R2.
+    """
 
     _data = data.copy()
 
@@ -128,6 +204,10 @@ def _train_eval(estimator: Estimator,
                 target_column,
                 squaring,
                 replace=False):
+    """Trains and evaluates a single Estimator for one iteration.
+
+    NOTE: This should not be called directly by the user.
+    """
 
     train, test = train_test_split(data, test_size=test_size)
     if replace:

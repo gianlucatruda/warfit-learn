@@ -41,16 +41,26 @@ def score_r2(y_true, y_pred):
 
 
 def score_hybrid(y_true, y_pred):
-    """Custom metric function that is a hybrid of MAE and PW20"""
+    """Custom metric function. A hybrid of MAE and PW20"""
     return score_pw20(y_true, y_pred) / (score_mae(y_true, y_pred) ** 2)
 
 
 def confidence_interval(data, confidence=0.95, *args, **kwargs):
-    """ Calculates confidence interval's start and end for some data.
+    """Calculates confidence interval start and end for some data.
 
-    Assumes data is independent.
+    Assumes data is independent and follows a t-distribution.
 
-    Returns: int_start, int_end
+    Parameters
+    ----------
+    data : array-like
+        The 1D-array or list of values.
+    confidence : float, optional
+        The conidence level (inverse of alpha), by default 0.95
+
+    Returns
+    -------
+    Tuple
+        (interval_start, interval_end)
     """
 
     return t.interval(confidence,

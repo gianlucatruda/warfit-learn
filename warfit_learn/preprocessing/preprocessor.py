@@ -20,7 +20,6 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-# TODO move to a config file
 FILTER_COLUMNS = [
     'Age',
     'Therapeutic Dose of Warfarin',
@@ -55,7 +54,22 @@ IWPC_PARAMS = [
 
 
 def prepare_iwpc(data: pd.DataFrame, drop_inr=True):
-    """Prepare (clean + format) IWPC data for experimentation.
+    """Prepare IWPC data for experimentation.
+
+    NOTE: This is equivalent to calling `clean_iwpc()` and
+    then `format_iwpc()`.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        The raw IWPC data.
+    drop_inr : bool, optional
+        Whether to drop the INR field, by default True
+
+    Returns
+    -------
+    pd.DataFrame
+        The cleaned and preprocessed IWPC dataset.
     """
 
     assert(isinstance(data, pd.DataFrame))
@@ -74,7 +88,25 @@ def prepare_iwpc(data: pd.DataFrame, drop_inr=True):
 
 
 def clean_iwpc(data: pd.DataFrame):
-    """Clean IWPC dataset (using imputation and other Ma et al. techniques)
+    """Clean the IWPC dataset.
+
+    Imputes missing height and weight using linear regression.
+    Imputes missing vkorc1 genotypes using IWPC algorithm.
+    Vectorises categorical features to one-hot encoded format.
+
+    NOTE: The output is not yet ready for training a model. You should
+    call `format_iwpc(data)` with the output `data` to vectorise into
+    an ML-ready format.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        The raw IWPC dataset.
+
+    Returns
+    -------
+    pd.DataFrame
+        The cleaned IWPC dataset.
     """
 
     assert(isinstance(data, pd.DataFrame))
@@ -97,7 +129,37 @@ def clean_iwpc(data: pd.DataFrame):
 
 
 def format_iwpc(data: pd.DataFrame, mode='df', params=IWPC_PARAMS):
-    """Format IWPC dataset into ML-ready dataframe
+    """Format cleaned IWPC dataset into ML-ready dataframe.
+
+    NOTE: This requires a cleaned IWPC dataset, i.e. the output of the
+    `clean_iwpc()` function.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        The cleaned IWPC dataset.
+    mode : str, optional
+        The return mode, either 'df' for a Pandas dataframe or 'array'
+        for two NumPy arrays, by default 'df'.
+    params : list-like, optional
+        List of the which parameters should be included in the output,
+        by default `IWPC_PARAMS` (the ones standardised in the research).
+
+    Returns
+    -------
+
+    pd.DataFrame
+        A dataframe of the formatted IWPC data, if in `df` mode.
+
+    Tuple
+        A tuple of (X, y) numpy arrays where `X` is the multi-dimensional
+        input matrix and `y` is the single-dimensional target feature.
+        This is only returned if `array` mode.
+
+    Raises
+    ------
+    KeyError
+        All parameters in `params` must be the name of a column in `data`.
     """
 
     assert(isinstance(data, pd.DataFrame))
@@ -118,17 +180,20 @@ def format_iwpc(data: pd.DataFrame, mode='df', params=IWPC_PARAMS):
 
     if mode == 'array':
         y = _data['Therapeutic Dose of Warfarin'].values
-        x = _data.drop(['Therapeutic Dose of Warfarin'], axis=1).values
-        return x, y
+        X = _data.drop(['Therapeutic Dose of Warfarin'], axis=1).values
+        return X, y
     else:
         return _data
 
 
 def describe_iwpc_cohort(data: pd.DataFrame):
-    """Describes the distribution of the cohort
-    """
+    """Describes the distribution of the cohort.
 
-    # TODO tidy this up by identifying categories (in a config file)
+    Parameters
+    ----------
+    data : pd.DataFrame
+        The IWPC dataset after `clean_iwpc()` has been run on it.
+    """
 
     _interest_columns = [
         'Therapeutic Dose of Warfarin',
@@ -178,6 +243,8 @@ def describe_iwpc_cohort(data: pd.DataFrame):
 
 
 def _verify_shape(df: pd.DataFrame):
+    """Ensures data it of specific shape
+    """
 
     return df.shape == (6256, 68)
 
@@ -232,6 +299,7 @@ def _define_dose_groups(df: pd.DataFrame):
 def _get_dummy_categoricals(df: pd.DataFrame):
     """One-hot encode categorical columns
     """
+
     _dummied = pd.get_dummies(
         df[[
             'Weight (kg)',
@@ -303,6 +371,7 @@ def _replace_height_and_weight(data: pd.DataFrame,
 def _impute_vkorc1_row(row: pd.Series):
     """Impute VKORCI genotype using Klein et al. 2009 technique
     """
+
     rs2359612 = row['VKORC1 genotype:   2255C>T (7566); chr16:31011297; rs2359612; A/G']
     rs9934438 = row['VKORC1 genotype:   1173 C>T(6484); chr16:31012379; rs9934438; A/G']
     rs9923231 = row['VKORC1 genotype:   -1639 G>A (3673); chr16:31015190; rs9923231; C/T']
@@ -352,6 +421,7 @@ def _impute_genotypes(df: pd.DataFrame, func=_impute_vkorc1_row):
 def _drop_unusable_rows(df: pd.DataFrame, col_names=FILTER_COLUMNS):
     """Remove essential rows that are missing
     """
+
     _df = df.copy()
     _df.dropna(subset=col_names, inplace=True)
 

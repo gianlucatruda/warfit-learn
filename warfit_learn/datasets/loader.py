@@ -17,12 +17,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import pandas as pd
-from os.path import dirname, join, splitext
+from os.path import dirname, join
 
 
-def load_iwpc():
-    """Import IWPC dataset as DataFrame
+def load_iwpc() -> pd.DataFrame:
+    """Loads raw IWPC dataset as dataframe object.
+
+    Returns
+    -------
+    pd.DataFrame
+        The raw IWPC dataset.
     """
+
     module_path = dirname(__file__)
     fpath = join(module_path, 'data', 'iwpc.pkl')
 

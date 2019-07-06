@@ -20,7 +20,11 @@ from sklearn.base import BaseEstimator
 
 
 class Estimator(BaseEstimator):
-    """Wrapper class for any sklearn Estimator.
+    """Wrapper class for any scikit-learn Estimator.
+
+    This allows us to give the estimators a human-relevant
+    description that is displayed in the automatically-generated
+    results.
     """
 
     def __init__(self, estimator: BaseEstimator, identifier: str):
@@ -34,26 +38,48 @@ class Estimator(BaseEstimator):
 
     @property
     def identifier(self):
-        """Get or set the identifier (name) for the Estimator.
-
-        Returns
-        -------
-        str
-            The identifier (name) for the Estimator.
+        """The identifier (name) for the Estimator.
         """
         return self.__identifier
 
     @property
     def estimator(self):
+        """The underlying sklearn Estimator object.
+        """
         return self.__estimator
 
     @property
     def is_trained(self):
+        """The train status of the Estimator
+        """
         return self.__is_trained
 
-    def fit(self, x, y):
-        self.__estimator.fit(x, y)
+    def fit(self, X, y):
+        """Train the Estimator on provided data.
+
+        Parameters
+        ----------
+        X : array-like
+            A multi-dimensional array of input data.
+        y : array-like
+            A single-dimensional array of target data.
+        """
+        self.__estimator.fit(X, y)
         self.__is_trained = True
 
-    def predict(self, x):
-        return self.__estimator.predict(x)
+    def predict(self, X):
+        """Predict the y-value for the given data.
+
+        NOTE: It's wise to fit() the estimator before trying to predict.
+
+        Parameters
+        ----------
+        X : array-like
+            A multi-dimensional array of input data.
+
+        Returns
+        -------
+        array-like
+            A single-dimensional array of predicted data.
+        """
+        return self.__estimator.predict(X)
