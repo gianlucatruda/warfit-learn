@@ -3,6 +3,7 @@
 [![PyPI version fury.io](https://badge.fury.io/py/warfit-learn.svg)](https://pypi.org/project/warfit-learn/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/warfit-learn.svg)](https://pypi.org/project/warfit-learn/)
 [![PyPI license](https://img.shields.io/pypi/l/warfit-learn.svg)](https://pypi.org/project/warfit-learn/)
+[![Build Status](https://travis-ci.com/gianlucatruda/warfit-learn.svg?branch=master)](https://travis-ci.com/gianlucatruda/warfit-learn/) 
 
 
 A toolkit for reproducible research in warfarin dose estimation.
