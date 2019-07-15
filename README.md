@@ -6,7 +6,9 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/467076ac86de4ca389febcf07bffd161)](https://app.codacy.com/app/gianlucatruda/warfit-learn?utm_source=github.com&utm_medium=referral&utm_content=gianlucatruda/warfit-learn&utm_campaign=Badge_Grade_Dashboard)
 [![PyPI license](https://img.shields.io/pypi/l/warfit-learn.svg)](https://pypi.org/project/warfit-learn/)
 
-A toolkit for reproducible research in warfarin dose estimation.
+_A machine learning toolkit for reproducible research in warfarin dose estimation._
+
+Read [the paper](https://arxiv.org/abs/1907.05363) on arXiv.
 
 ## Features
 
