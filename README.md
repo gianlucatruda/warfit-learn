@@ -10,6 +10,12 @@ _A machine learning toolkit for reproducible research in warfarin dose estimatio
 
 Read [the paper](https://arxiv.org/abs/1907.05363) on arXiv.
 
+## Contents
+* [Features](#features)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Citing this work](#citing-this-work)
+
 ## Features
 
 - Seamless loading, cleaning, and preprocessing of the IWPC warfarin dataset.
@@ -66,6 +72,23 @@ results = evaluate_estimators(
     resamples=10,
 )
 ```
+
+## Citing this work
+If you use warfit-learn in a scientific publication, please consider citing the following paper:
+
+Truda, G. and Marais, P., 2019. Warfarin dose estimation on multiple datasets with automated hyperparameter optimisation and a novel software framework. _arXiv preprint arXiv:1907.05363._
+
+BibTeX entry:
+```
+@article{truda2019warfarin,
+  title={Warfarin dose estimation on multiple datasets with automated hyperparameter optimisation and a novel software framework},
+  author={Truda, Gianluca and Marais, Patrick},
+  journal={arXiv preprint arXiv:1907.05363},
+  year={2019}
+}
+```
+
+
 
 ## Copyright
 
