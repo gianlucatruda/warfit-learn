@@ -4,9 +4,9 @@ matrix:
     - python: 3.5
     - python: 3.6
     - python: 3.7
-    dist: xenial
-    sudo: true
+  dist: xenial
+  sudo: true
 install:
-  - pip install pipenv
+  - pip install pipenv pytest
   - pipenv install
-script: pytest
+  - pytest
