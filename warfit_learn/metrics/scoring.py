@@ -45,10 +45,10 @@ def score_hybrid(y_true, y_pred):
     return score_pw20(y_true, y_pred) / (score_mae(y_true, y_pred) ** 2)
 
 
-def confidence_interval(data, confidence=0.95, *args, **kwargs):
+def confidence_interval(data, confidence=0.95):
     """Calculates confidence interval start and end for some data.
 
-    Assumes data is independent and follows a t-distribution.
+    Makes use of the percentile method.
 
     Parameters
     ----------
@@ -63,7 +63,8 @@ def confidence_interval(data, confidence=0.95, *args, **kwargs):
         (interval_start, interval_end)
     """
 
-    return t.interval(confidence,
-                      data.shape[0] - 1,
-                      loc=np.mean(data),
-                      scale=sem(data))
+    p = ((1.0-confidence)/2.0) * 100
+    lower = np.percentile(data, p)
+    p = (confidence+((1.0-confidence)/2.0)) * 100
+    upper = np.percentile(data, p)
+    return lower, upper
