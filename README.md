@@ -7,7 +7,7 @@
 
 _A machine learning toolkit for reproducible research in warfarin dose estimation._
 
-Read [the paper on arXiv](https://arxiv.org/abs/1907.05363) for free or on [Science Direct](https://doi.org/10.1016/j.jbi.2020.103634) with your insitution login.
+Read [the paper on arXiv](https://arxiv.org/abs/1907.05363) for free or on [Science Direct](https://doi.org/10.1016/j.jbi.2020.103634) with your institutional access.
 
 ## Contents
 * [Features](#features)
@@ -79,7 +79,7 @@ Gianluca Truda, Patrick Marais. _Evaluating warfarin dosing models on multiple d
 
 BibTeX entry:
 ```
-@article{TRUDA2020103634,
+@article{Truda2020warfit,
 title = "Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation",
 journal = "Journal of Biomedical Informatics",
 pages = "103634",
