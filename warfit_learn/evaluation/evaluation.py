@@ -17,13 +17,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 from typing import List
-from tqdm import tqdm
 from ..estimators import Estimator
 from ..metrics import score_mae, score_pw20, score_r2
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.utils import resample
-from sklearn.model_selection import ShuffleSplit
 from sklearn.utils import resample
 import numpy as np
 import pandas as pd
@@ -171,8 +168,7 @@ def evaluate_estimators(estimators: List[Estimator],
         _data[x_cols] = scaler.fit_transform(_data[x_cols])
 
     results = []
-    for i in range(len(estimators)):
-            est = estimators[i]
+    for i, est in enumerate(estimators):
             print(f'\n{est.identifier}...')
             res = evaluate_estimator(est, _data,
                                      target_column=target_column,

@@ -322,7 +322,6 @@ def _get_imputed_heights(df: pd.DataFrame):
     x_train = train.drop(['Height (cm)'], axis='columns')
     y_train = train['Height (cm)']
     x_pred = pred.drop(['Height (cm)'], axis='columns')
-    y_pred = pred['Height (cm)']
     linreg = LinearRegression()
     linreg.fit(x_train, y_train)
     imputed_heights = linreg.predict(x_pred)
@@ -341,7 +340,6 @@ def _get_imputed_weights(df: pd.DataFrame):
     x_train = train.drop(['Weight (kg)'], axis='columns')
     y_train = train['Weight (kg)']
     x_pred = pred.drop(['Weight (kg)'], axis='columns')
-    y_pred = pred['Weight (kg)']
 
     linreg = LinearRegression()
     linreg.fit(x_train, y_train)

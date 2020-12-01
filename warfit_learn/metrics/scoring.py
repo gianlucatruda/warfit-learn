@@ -17,14 +17,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 from sklearn.metrics import mean_absolute_error, r2_score
-from scipy.stats import sem, t
 import numpy as np
 
 
 def score_pw20(y_true, y_pred):
     """Custom metric function for PW20"""
     patients_in_20 = 0
-    for i in range(len(y_true)):
+    for i, _ in enumerate(y_true):
         if 0.8 * y_true[i] < y_pred[i] < 1.2 * y_true[i]:
             patients_in_20 += 1
     return float(100 * patients_in_20 / len(y_true))
