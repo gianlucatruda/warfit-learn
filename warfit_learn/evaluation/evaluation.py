@@ -168,7 +168,7 @@ def evaluate_estimators(estimators: List[Estimator],
         _data[x_cols] = scaler.fit_transform(_data[x_cols])
 
     results = []
-    for i, est in enumerate(estimators):
+    for _, est in enumerate(estimators):
             print(f'\n{est.identifier}...')
             res = evaluate_estimator(est, _data,
                                      target_column=target_column,

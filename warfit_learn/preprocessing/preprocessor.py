@@ -128,7 +128,7 @@ def clean_iwpc(data: pd.DataFrame):
     return _data
 
 
-def format_iwpc(data: pd.DataFrame, mode='df', params=IWPC_PARAMS):
+def format_iwpc(data: pd.DataFrame, mode='df', params=None):
     """Format cleaned IWPC dataset into ML-ready dataframe.
 
     NOTE: This requires a cleaned IWPC dataset, i.e. the output of the
@@ -163,6 +163,9 @@ def format_iwpc(data: pd.DataFrame, mode='df', params=IWPC_PARAMS):
     """
 
     assert(isinstance(data, pd.DataFrame))
+
+    if params is None:
+        params = IWPC_PARAMS
 
     for p in params:
         if p not in data.columns:
@@ -416,9 +419,12 @@ def _impute_genotypes(df: pd.DataFrame, func=_impute_vkorc1_row):
     return _df
 
 
-def _drop_unusable_rows(df: pd.DataFrame, col_names=FILTER_COLUMNS):
+def _drop_unusable_rows(df: pd.DataFrame, col_names=None):
     """Remove essential rows that are missing
     """
+
+    if col_names is None:
+        col_names = FILTER_COLUMNS
 
     _df = df.copy()
     _df.dropna(subset=col_names, inplace=True)
@@ -426,9 +432,12 @@ def _drop_unusable_rows(df: pd.DataFrame, col_names=FILTER_COLUMNS):
     return _df
 
 
-def _exclude_rare_alleles(df: pd.DataFrame, alleles=RARE_ALLELES):
+def _exclude_rare_alleles(df: pd.DataFrame, alleles=None):
     """Remove rows with rare alleles
     """
+
+    if alleles is None:
+        alleles = RARE_ALLELES
 
     _df = df[df['CYP2C9 consensus'].isin(alleles) == False]
     return _df

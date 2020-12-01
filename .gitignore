@@ -1,3 +1,8 @@
+# Builds
+Makefile
+make.bat
+warfit_learn.egg-info/
+
 *.pyc
 *.so
 *.pyd
