@@ -75,7 +75,7 @@ results = evaluate_estimators(
 ## Citing this work
 If you use warfit-learn in a scientific publication, please consider citing the following paper:
 
-G. Truda and P. Marais, Evaluating warfarin dosing models on multipledatasets with a novel software framework and evolutionary optimisation, _Journal of Biomedical Informatics_ (2020), doi: https://doi.org/10.1016/j.jbi.2020.103634
+G. Truda and P. Marais, Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation, _Journal of Biomedical Informatics_ (2020), doi: https://doi.org/10.1016/j.jbi.2020.103634
 
 BibTeX entry:
 ```
