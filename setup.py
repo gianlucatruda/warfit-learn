@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="warfit-learn",
-    version="0.1",
+    version="0.2.1",
     author="Gianluca Truda",
     author_email="gianlucatruda@gmail.com",
     description="A toolkit for reproducible research in warfarin dose estimation",
