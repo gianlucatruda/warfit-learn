@@ -7,7 +7,7 @@
 
 _A machine learning toolkit for reproducible research in warfarin dose estimation._
 
-Read [the paper](https://arxiv.org/abs/1907.05363) on arXiv.
+Read [the paper on arXiv](https://arxiv.org/abs/1907.05363) for free or on [Science Direct](https://doi.org/10.1016/j.jbi.2020.103634) with your insitution login.
 
 ## Contents
 * [Features](#features)
@@ -75,18 +75,22 @@ results = evaluate_estimators(
 ## Citing this work
 If you use warfit-learn in a scientific publication, please consider citing the following paper:
 
-Truda, G. and Marais, P., 2019. Warfarin dose estimation on multiple datasets with automated hyperparameter optimisation and a novel software framework. _arXiv preprint arXiv:1907.05363._
+Gianluca Truda, Patrick Marais. _Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation_. Journal of Biomedical Informatics. 2020. ISSN 1532-0464. https://doi.org/10.1016/j.jbi.2020.103634.
 
 BibTeX entry:
 ```
-@article{truda2019warfarin,
-  title={Warfarin dose estimation on multiple datasets with automated hyperparameter optimisation and a novel software framework},
-  author={Truda, Gianluca and Marais, Patrick},
-  journal={arXiv preprint arXiv:1907.05363},
-  year={2019}
+@article{TRUDA2020103634,
+title = "Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation",
+journal = "Journal of Biomedical Informatics",
+pages = "103634",
+year = "2020",
+issn = "1532-0464",
+doi = "https://doi.org/10.1016/j.jbi.2020.103634",
+url = "http://www.sciencedirect.com/science/article/pii/S1532046420302628",
+author = "Gianluca Truda and Patrick Marais",
+keywords = "Warfarin, Machine learning, Genetic programming, Python, Supervised learning, Anticoagulant, Pharmacogenetics, Software",
 }
 ```
-
 
 
 ## Copyright
