@@ -2,37 +2,38 @@
 
 [![PyPI version fury.io](https://badge.fury.io/py/warfit-learn.svg)](https://pypi.org/project/warfit-learn/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/warfit-learn.svg)](https://pypi.org/project/warfit-learn/)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/467076ac86de4ca389febcf07bffd161)](https://app.codacy.com/app/gianlucatruda/warfit-learn?utm_source=github.com&utm_medium=referral&utm_content=gianlucatruda/warfit-learn&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/467076ac86de4ca389febcf07bffd161)](https://app.codacy.com/app/gianlucatruda/warfit-learn?utm_source=github.com\&utm_medium=referral\&utm_content=gianlucatruda/warfit-learn\&utm_campaign=Badge_Grade_Dashboard)
 [![PyPI license](https://img.shields.io/pypi/l/warfit-learn.svg)](https://pypi.org/project/warfit-learn/)
 
-_A machine learning toolkit for reproducible research in warfarin dose estimation._
+*A machine learning toolkit for reproducible research in warfarin dose estimation.*
 
 Read [the paper on arXiv](https://arxiv.org/abs/1907.05363) for free or on [Science Direct](https://doi.org/10.1016/j.jbi.2020.103634) with your institutional access.
 
 ## Contents
 
-*  [Features](#features)
-*  [Installation](#installation)
-*  [Usage](#usage)
-*  [Citing this work](#citing-this-work)
+*   [Features](#features)
+*   [Installation](#installation)
+*   [Usage](#usage)
+*   [Citing this work](#citing-this-work)
 
 ## Features
 
-*  Seamless loading, cleaning, and preprocessing of the IWPC warfarin dataset.
-*  Standardised implementations of scoring functions.
-  *  Percentage patients within 20% of therapeutic dose (PW20)
-  *  Mean absolute error (MAE)
-  *  R<sup>2</sup> coefficient
-  *  Hybrid scoring functions
-  *  Confidence intervals
-*  Multithreaded model evaluation using standardised resampling techniques.
-  *  Monte-carlo cross validation
-  *  Bootstrap resampling
-*  Full interoperability with NumPy, SciPy, Pandas, Scikit-learn, and MLxtend.
+*   Seamless loading, cleaning, and preprocessing of the IWPC warfarin dataset.
+*   Standardised implementations of scoring functions.
+*   Percentage patients within 20% of therapeutic dose (PW20)
+*   Mean absolute error (MAE)
+*   R<sup>2</sup> coefficient
+*   Hybrid scoring functions
+*   Confidence intervals
+*   Multithreaded model evaluation using standardised resampling techniques.
+*   Monte-carlo cross validation
+*   Bootstrap resampling
+*   Full interoperability with NumPy, SciPy, Pandas, Scikit-learn, and MLxtend.
 
 Supports Python 3.6+ on macOS, Linux, and Windows.
 
 ## Installation
+
 ```bash
 pip install warfit-learn
 ```
@@ -74,11 +75,13 @@ results = evaluate_estimators(
 ```
 
 ## Citing this work
+
 If you use warfit-learn in a scientific publication, please consider citing the following paper:
 
-G. Truda and P. Marais, Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation, _Journal of Biomedical Informatics_ (2020), doi: https://doi.org/10.1016/j.jbi.2020.103634
+G. Truda and P. Marais, Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation, *Journal of Biomedical Informatics* (2020), doi: https://doi.org/10.1016/j.jbi.2020.103634
 
 BibTeX entry:
+
 ```bibtex
 @article{Truda2020warfit,
   title = "Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation",
