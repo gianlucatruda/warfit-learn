@@ -10,6 +10,7 @@ _A machine learning toolkit for reproducible research in warfarin dose estimatio
 Read [the paper on arXiv](https://arxiv.org/abs/1907.05363) for free or on [Science Direct](https://doi.org/10.1016/j.jbi.2020.103634) with your institutional access.
 
 ## Contents
+
 *  [Features](#features)
 *  [Installation](#installation)
 *  [Usage](#usage)
