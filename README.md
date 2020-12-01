@@ -80,15 +80,15 @@ G. Truda and P. Marais, Evaluating warfarin dosing models on multiple datasets w
 BibTeX entry:
 ```
 @article{Truda2020warfit,
-title = "Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation",
-journal = "Journal of Biomedical Informatics",
-pages = "103634",
-year = "2020",
-issn = "1532-0464",
-doi = "https://doi.org/10.1016/j.jbi.2020.103634",
-url = "http://www.sciencedirect.com/science/article/pii/S1532046420302628",
-author = "Gianluca Truda and Patrick Marais",
-keywords = "Warfarin, Machine learning, Genetic programming, Python, Supervised learning, Anticoagulant, Pharmacogenetics, Software",
+  title = "Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation",
+  journal = "Journal of Biomedical Informatics",
+  pages = "103634",
+  year = "2020",
+  issn = "1532-0464",
+  doi = "https://doi.org/10.1016/j.jbi.2020.103634",
+  url = "http://www.sciencedirect.com/science/article/pii/S1532046420302628",
+  author = "Gianluca Truda and Patrick Marais",
+  keywords = "Warfarin, Machine learning, Genetic programming, Python, Supervised learning, Anticoagulant, Pharmacogenetics, Software",
 }
 ```
 
