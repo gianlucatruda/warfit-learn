@@ -10,24 +10,24 @@ _A machine learning toolkit for reproducible research in warfarin dose estimatio
 Read [the paper on arXiv](https://arxiv.org/abs/1907.05363) for free or on [Science Direct](https://doi.org/10.1016/j.jbi.2020.103634) with your institutional access.
 
 ## Contents
-* [Features](#features)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Citing this work](#citing-this-work)
+*  [Features](#features)
+*  [Installation](#installation)
+*  [Usage](#usage)
+*  [Citing this work](#citing-this-work)
 
 ## Features
 
-- Seamless loading, cleaning, and preprocessing of the IWPC warfarin dataset.
-- Standardised implementations of scoring functions.
-  - Percentage patients within 20% of therapeutic dose (PW20)
-  - Mean absolute error (MAE)
-  - R<sup>2</sup> coefficient
-  - Hybrid scoring functions
-  - Confidence intervals
-- Multithreaded model evaluation using standardised resampling techniques.
-  - Monte-carlo cross validation
-  - Bootstrap resampling
-- Full interoperability with NumPy, SciPy, Pandas, Scikit-learn, and MLxtend.
+*  Seamless loading, cleaning, and preprocessing of the IWPC warfarin dataset.
+*  Standardised implementations of scoring functions.
+  *  Percentage patients within 20% of therapeutic dose (PW20)
+  *  Mean absolute error (MAE)
+  *  R<sup>2</sup> coefficient
+  *  Hybrid scoring functions
+  *  Confidence intervals
+*  Multithreaded model evaluation using standardised resampling techniques.
+  *  Monte-carlo cross validation
+  *  Bootstrap resampling
+*  Full interoperability with NumPy, SciPy, Pandas, Scikit-learn, and MLxtend.
 
 Supports Python 3.6+ on macOS, Linux, and Windows.
 
@@ -78,7 +78,7 @@ If you use warfit-learn in a scientific publication, please consider citing the 
 G. Truda and P. Marais, Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation, _Journal of Biomedical Informatics_ (2020), doi: https://doi.org/10.1016/j.jbi.2020.103634
 
 BibTeX entry:
-```
+```bibtex
 @article{Truda2020warfit,
   title = "Evaluating warfarin dosing models on multiple datasets with a novel software framework and evolutionary optimisation",
   journal = "Journal of Biomedical Informatics",
@@ -91,7 +91,6 @@ BibTeX entry:
   keywords = "Warfarin, Machine learning, Genetic programming, Python, Supervised learning, Anticoagulant, Pharmacogenetics, Software",
 }
 ```
-
 
 ## Copyright
 
